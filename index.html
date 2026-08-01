@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HiveBoard</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="./assets/index-EDRIx3N9.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CY8Hdvm0.css">
+  <script type="module" crossorigin src="./assets/index-JPLprRiL.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DWw2FUJv.css">
 </head>
 
 <body>
@@ -90,7 +90,7 @@
         </p>
 
         <div class="pieces-list"
-          style="overflow-y: auto; max-height: 65vh; padding-right: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          style="flex: 1; min-height: 0; overflow-y: auto; padding-right: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
           <h3
             style="margin-top: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.3rem; margin-bottom: 0.2rem; font-size: 0.9rem; opacity: 0.8;">
             Torque-Based Tasks</h3>
@@ -124,32 +124,41 @@
           </div>
         </div>
       </div>
-      <div class="bottom-bar">
-        <button id="view-top" class="view-btn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+      <div class="bottom-bar collapsed-views" id="bottom-bar">
+        <div id="view-options" class="view-options">
+          <button id="view-top" class="view-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span class="btn-text">Top View</span>
+          </button>
+  
+          <button id="view-side" class="view-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="2 22 12 2 22 22"></polygon>
+              <line x1="2" y1="22" x2="22" y2="22"></line>
+            </svg>
+            <span class="btn-text">Side View</span>
+          </button>
+  
+          <button id="center-view" class="view-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span class="btn-text">Centralize</span>
+          </button>
+        </div>
+
+        <button id="view-toggle-btn" class="view-btn mobile-only" title="View Options">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
-          <span class="btn-text">Top View</span>
-        </button>
-
-        <button id="view-side" class="view-btn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="2 22 12 2 22 22"></polygon>
-            <line x1="2" y1="22" x2="22" y2="22"></line>
-          </svg>
-          <span class="btn-text">Side View</span>
-        </button>
-
-        <button id="center-view" class="view-btn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <circle cx="12" cy="12" r="3"></circle>
-          </svg>
-          <span class="btn-text">Centralize</span>
         </button>
       </div>
     </div>
