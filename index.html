@@ -5,17 +5,832 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HiveBoard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="./assets/index-DlZGzsqN.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DHwmu428.css">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="./assets/favicon-D4gAfA18.svg">
+  <link rel="alternate icon" type="image/png" href="./assets/favicon-CFmUlRGJ.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    .sidebar-nav {
+      position: fixed;
+      left: 20px;
+      top: 40px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 160px;
+    }
+
+    .sidebar-nav .menu-label {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      font-weight: bold;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 10px;
+      color: #363636;
+      letter-spacing: 1px;
+    }
+
+    .sidebar-nav a {
+      color: #b5b5b5;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding-left: 10px;
+      border-left: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      color: #363636;
+      border-left: 2px solid #363636;
+      padding-left: 15px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .sidebar-nav {
+        display: none;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/index-B7rPwEcY.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-TYWf8Ufv.css">
 </head>
 
 <body>
-  <div id="app">
+  <nav class="sidebar-nav is-hidden-touch">
+    <a href="#Home">Home</a>
+    <a href="#Abstract">Abstract</a>
+    <a href="#Interactive-Viewer">3D Viewer</a>
+    <a href="#Modules-Specs">Modules & Specs</a>
+    <a href="#Videos">Videos</a>
+    <a href="#Citation">Citation</a>
+    <a href="#Acknowledgments">Acknowledgments</a>
+  </nav>
+
+  <div id="presentation-site">
+    <!-- HERO SECTION -->
+    <section class="hero pt-6 pb-2" id="Home">
+      <div class="hero-body pt-2 pb-5">
+        <div class="container is-widescreen has-text-centered">
+          <h1 class="title mt-5 mb-3"
+            style="font-size: 2.25rem; font-weight: 700; color: #1e293b; letter-spacing: -1px; line-height: 1.15;">
+            <span style="display: block; margin-bottom: 0.1em;"><span style="color: #edaf19ff;">Hive</span>Board: An
+              Open, Modular, 3D-Printed Dexterity</span>
+            <span style="display: block;">Benchmark for Industrial Robotic Manipulation</span>
+          </h1>
+
+          <div class="mb-1" style="font-size: 1.15rem; font-weight: 500; color: #475569;">
+            <span class="author-block">...,</span>
+            <span class="author-block">...,</span>
+            <span class="author-block">...,</span>
+            <span class="author-block">Ricardo V. Godoy,</span>
+            <span class="author-block">Marcelo Becker</span>
+          </div>
+
+          <div class="mb-1" style="font-size: 1rem; color: #64748b;">
+            <span class="author-block">Mobile Robotics Group, University of São Paulo, São Carlos, SP, Brazil</span>
+          </div>
+
+          <div class="mb-4" style="font-size: 0.9rem; color: #94a3b8;">
+            <span class="author-block">Corresponding author: <a href="mailto:ricardo.godoy@alumni.usp.br"
+                class="email-link">ricardo.godoy@alumni.usp.br</a></span>
+          </div>
+
+
+
+          <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-top: 2rem;">
+            <div class="hero-divider-line"
+              style="flex-grow: 1; max-width: 200px; height: 1px; background: linear-gradient(to left, #cbd5e1, transparent); margin-right: 20px;">
+            </div>
+
+            <div class="buttons is-centered" style="gap: 12px; margin: 0;">
+              <!-- PDF Link -->
+              <a href="#" class="button is-rounded is-outlined hero-link-btn"
+                style="border-color: #cbd5e1; color: #334155; font-weight: 500; padding: 0 1.2rem; transition: all 0.2s;">
+                <span class="icon" style="color: #475569;">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>PDF</span>
+              </a>
+              <!-- arXiv Link -->
+              <a href="#" class="button is-rounded is-outlined hero-link-btn"
+                style="border-color: #cbd5e1; color: #334155; font-weight: 500; padding: 0 1.2rem; transition: all 0.2s;">
+                <span class="icon" style="color: #475569;">
+                  <i class="ai ai-arxiv" style="font-size: 1.1em;"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+              <!-- Files Link -->
+              <a href="#" class="button is-rounded is-outlined hero-link-btn"
+                style="border-color: #cbd5e1; color: #334155; font-weight: 500; padding: 0 1.2rem; transition: all 0.2s;">
+                <span class="icon" style="color: #475569;">
+                  <i class="fas fa-folder-open"></i>
+                </span>
+                <span>Files</span>
+              </a>
+              <!-- GitHub Link -->
+              <a href="#" class="button is-rounded is-outlined hero-link-btn"
+                style="border-color: #cbd5e1; color: #334155; font-weight: 500; padding: 0 1.2rem; transition: all 0.2s;">
+                <span class="icon" style="color: #475569;">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </div>
+
+            <div class="hero-divider-line"
+              style="flex-grow: 1; max-width: 200px; height: 1px; background: linear-gradient(to right, #cbd5e1, transparent); margin-left: 20px;">
+            </div>
+          </div>
+
+          <!-- YouTube Video Embed -->
+          <div class="mt-6" style="width: 100%; max-width: 960px; margin-left: auto; margin-right: auto;">
+            <figure class="image is-16by9"
+              style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/kaYB_Oc64nA"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABSTRACT SECTION -->
+    <section class="section pt-2 pb-4" id="Abstract">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Abstract</h2>
+        <div class="content has-text-justified" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE IMAGE SECTION -->
+    <section class="pt-5 pb-6" id="Interactive-Image">
+      <div class="container is-max-desktop">
+        <div class="interactive-image-container"
+          style="position: relative; width: 100%; max-width: 250px; margin: 0 auto;">
+          <img src="./assets/Hiveboard4-Dn46tE7L.png" alt="HiveBoard Overview" style="width: 100%; height: auto; display: block;">
+
+          <!-- Validation Hand Overlapping the Board -->
+          <div class="validation-container is-hidden-mobile"
+            style="position: absolute; top: 8%; left: -105%; width: 330px; cursor: pointer; text-align: center; z-index: 15;">
+            <img src="./assets/hand-DmGfaCZr.png" alt="Validation Hand" class="validation-img"
+              style="width: 100%; height: auto; opacity: 0.4; transition: all 0.3s ease; object-fit: contain;">
+
+            <div class="validation-text"
+              style="opacity: 0; transform: translateY(5px); transition: all 0.3s ease; position: absolute; top: 100%; left: 50%; width: 220px; margin-left: -110px; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid #e2e8f0; font-size: 0.85rem; color: #475569; pointer-events: none; z-index: 20; text-align: left;">
+              <strong style="color: #0f172a; display: block; margin-bottom: 6px;">Validated with:</strong>
+              Open-Source Prosthetic Hands for STEM Education and Community Use
+            </div>
+          </div>
+
+          <!-- Validation Quadruped Overlapping the Board on the Right -->
+          <div class="validation-container is-hidden-mobile"
+            style="position: absolute; top: 10%; right: -105%; width: 380px; cursor: pointer; text-align: center; z-index: 15;">
+            <img src="./assets/quadruped-D1vX5s8j.png" alt="Validation Quadruped" class="validation-img"
+              style="width: 100%; height: auto; opacity: 0.4; transition: all 0.3s ease; object-fit: contain;">
+
+            <div class="validation-text"
+              style="opacity: 0; transform: translateY(5px); transition: all 0.3s ease; position: absolute; top: 100%; left: 50%; width: 220px; margin-left: -110px; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid #e2e8f0; font-size: 0.85rem; color: #475569; pointer-events: none; z-index: 20; text-align: left;">
+              <strong style="color: #0f172a; display: block; margin-bottom: 6px;">Validated with:</strong>
+              Quadruped Robot Locomotion and Manipulation
+            </div>
+          </div>
+
+          <!-- Hotspot 1: Torque/Valves -->
+          <div class="hotspot" style="top: 17.7%; left: 48.6%;">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-tooltip">
+              <h4 class="is-size-6" style="font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Torque Tasks</h4>
+              <p style="font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.4;">Modules like the industrial
+                valves evaluate the robot's grasping strength and continuous rotational dexterity.</p>
+            </div>
+          </div>
+
+          <!-- Hotspot 2: Assembly/Insertion -->
+          <div class="hotspot" style="top: 68.7%; left: 80.2%;">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-tooltip">
+              <h4 class="is-size-6" style="font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Precision Insertion
+              </h4>
+              <p style="font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.4;">Peg-in-hole and USB insertion
+                tasks test fine motor control, alignment, and contact-rich manipulation capabilities.</p>
+            </div>
+          </div>
+
+          <!-- Hotspot 3: Linear/Friction -->
+          <div class="hotspot" style="top: 66.3%; left: 19.4%;">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-tooltip">
+              <h4 class="is-size-6" style="font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Linear Resistance
+              </h4>
+              <p style="font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.4;">Drawers and sliders measure
+                the platform's ability to maintain steady velocity and force under varied friction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-4" id="Interactive-Viewer">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <h2 class="title is-3 has-text-centered mb-5">Interactive 3D Benchmark</h2>
+            <div class="content has-text-justified mb-5" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
+              <p>
+                Explore the HiveBoard interactively in 3D. Freely rotate the perspective, inspect interchangeable
+                modules, and view real-time configurations to experience the flexibility and modularity of our robotic
+                platform.
+              </p>
+            </div>
+            <div class="viewer-block" id="open-viewer-btn">
+              <div class="viewer-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="play-icon">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+                <h3 class="viewer-title">Interactive 3D Benchmark Explorer</h3>
+                <p class="viewer-subtitle">Click to interact with the modular boards and tasks</p>
+              </div>
+              <div class="viewer-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW SECTION: Modules & Specifications -->
+    <section class="section" id="Modules-Specs">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered mb-3">Modules & Specifications</h2>
+        <p class="has-text-centered mb-4" style="color: #94a3b8; line-height: 1.6;">
+          Explore our suite of testing components. Select a category below to compare physical hardware with its digital
+          twin and review detailed technical parameters.
+        </p>
+        <!-- 3 Category Dropdowns -->
+        <div class="columns is-centered is-variable is-4 mb-4" id="category-dropdowns">
+          <!-- JS will inject the 3 dropdowns here -->
+        </div>
+
+        <!-- Dynamic Module Content -->
+        <div class="module-content" id="module-dynamic-content">
+          <div class="columns is-vcentered">
+            <!-- Left: Images -->
+            <div class="column is-half">
+              <div class="img-comp-container"
+                style="position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); user-select: none; background: radial-gradient(circle, #ffffff 0%, #f1f5f9 100%);">
+                <!-- Bottom Image (3D Model) -->
+                <img id="dyn-img-3d" src="./assets/hiveboard_preview-C8PxoF98.png"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 1rem;"
+                  alt="3D Model">
+                <!-- Top Image (Real Object) with a filter -->
+                <img id="dyn-img-real" class="img-comp-overlay" src="./assets/hiveboard_preview-C8PxoF98.png"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 1rem; clip-path: inset(0 50% 0 0); filter: grayscale(80%) sepia(20%) hue-rotate(180deg);"
+                  alt="Real Object">
+
+                <!-- Slider Handle -->
+                <div class="img-comp-slider slider-handle-animated" id="dyn-slider-handle"
+                  style="position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: white; transform: translateX(-50%); pointer-events: none; z-index: 5;">
+                  <div
+                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; background: white; border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="10 18 6 12 10 6"></polyline>
+                      <polyline points="14 18 18 12 14 6"></polyline>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Range Input -->
+                <input type="range" min="0" max="100" value="50" class="img-comp-input" id="dyn-slider-input"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; z-index: 10;">
+
+                <!-- Labels -->
+                <span
+                  style="position: absolute; bottom: 12px; left: 12px; background: rgba(15, 23, 42, 0.7); color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; z-index: 4; font-weight: 500;">Real
+                  Object</span>
+                <span
+                  style="position: absolute; bottom: 12px; right: 12px; background: #edaf19; color: #0f172a; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; z-index: 4; font-weight: 600;">3D
+                  Model</span>
+              </div>
+            </div>
+            <!-- Right: Text & Table -->
+            <div class="column is-half">
+              <h3 class="title is-4" id="dyn-title">Loading...</h3>
+              <p class="mb-4 has-text-justified" id="dyn-desc"></p>
+              <style>
+                .academic-table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  background-color: transparent !important;
+                  margin-top: 1rem;
+                }
+
+                .academic-table th,
+                .academic-table td {
+                  padding: 6px 16px;
+                  text-align: left;
+                  border: none;
+                  border-width: 0;
+                  background-color: transparent;
+                  color: #334155;
+                }
+
+                .academic-table thead tr {
+                  border-top: 1px solid #cbd5e1;
+                  border-bottom: 1px solid #cbd5e1;
+                }
+
+                .academic-table thead th {
+                  background-color: #f1f5f9;
+                  font-weight: 700;
+                  color: #0f172a;
+                }
+
+                .academic-table tbody tr {
+                  border-bottom: 1px solid #f1f5f9;
+                  transition: background-color 0.2s ease;
+                }
+
+                .academic-table tbody tr:hover {
+                  background-color: #f1f5f9;
+                }
+
+                .academic-table tbody tr:last-child {
+                  border-bottom: 1px solid #cbd5e1;
+                }
+
+                .academic-table td:first-child strong {
+                  font-weight: 600;
+                  color: #475569;
+                }
+              </style>
+              <table class="table academic-table">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody id="dyn-table-body">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const modulesData = [
+        {
+          id: 'high-valve', name: 'High Torque Valve', category: 'Torque-Based', realImg: './assets/modules/torque_valve_noFriction_setup.png',
+          desc: 'This high-torque valve module is designed to test robotic grasping strength and rotational dexterity under high resistance. It features an industrial-grade valve body mounted on a standardized honeycomb base.',
+          params: [['Torque Required', '4.5 Nm'], ['Rotation Angle', '90 degrees'], ['Material', 'Stainless Steel / PETG'], ['Weight', '850g']]
+        },
+        {
+          id: 'small-valve', name: 'Small Valve', category: 'Torque-Based', realImg: './assets/modules/small_valve_setup.png',
+          desc: 'A smaller precision valve for testing two-finger pinch grasps and continuous rotational capabilities under low torque requirements.',
+          params: [['Torque Required', '1.2 Nm'], ['Rotation Angle', 'Continuous'], ['Material', 'Brass / PETG'], ['Weight', '320g']]
+        },
+        {
+          id: 'industrial-nuts', name: 'Industrial Nuts', category: 'Torque-Based', realImg: './assets/modules/m30_setup.png',
+          desc: 'A set of different sized threaded nuts (M8, M14, M30). Evaluates the ability of the robotic gripper to adapt to different geometric sizes and perform continuous screwing.',
+          params: [['Sizes', 'M8, M14, M30'], ['Thread Type', 'Metric Coarse'], ['Material', 'Steel'], ['Weight', 'Varies']]
+        },
+        {
+          id: 'circuit-breaker', name: 'Circuit Breaker', category: 'Precision-Based', realImg: './assets/modules/switch_setup.png',
+          desc: 'Simulates an electrical panel circuit breaker. Requires precise alignment and a flipping motion, testing the manipulator\'s fine motor control on small switches.',
+          params: [['Actuation Force', '3.5 N'], ['Travel Distance', '15 mm'], ['Material', 'ABS Plastic'], ['Weight', '150g']]
+        },
+        {
+          id: 'button-cover', name: 'Button & Cover', category: 'Precision-Based', realImg: './assets/modules/button_setup.png',
+          desc: 'A covered emergency stop button. The robot must first lift the protective cover and then press the button down, testing sequential task planning and precision.',
+          params: [['Button Force', '5 N'], ['Cover Torque', '0.5 Nm'], ['Material', 'Acrylic / PETG'], ['Weight', '200g']]
+        },
+        {
+          id: 'ball-valve', name: 'Ball Valve', category: 'Composed Assembly', realImg: './assets/modules/big_valve_setup.png',
+          desc: 'An industrial ball valve requiring a lever-pulling motion. Tests the robot\'s capability to exert linear and rotational forces along an offset pivot point.',
+          params: [['Force Required', '15 N'], ['Lever Travel', '90 degrees'], ['Material', 'PVC / Steel'], ['Weight', '600g']]
+        },
+        {
+          id: 'key-lock', name: 'Key Lock', category: 'Composed Assembly', realImg: './assets/modules/key_setup.png',
+          desc: 'A precision key insertion and rotation task. Requires extremely tight tolerances for insertion followed by a rotational motion to unlock.',
+          params: [['Clearance', '0.2 mm'], ['Rotation', '90 degrees'], ['Material', 'Brass / Steel'], ['Weight', '120g']]
+        },
+        {
+          id: 'lamp-bulb', name: 'Lamp Bulb', category: 'Composed Assembly', realImg: './assets/modules/lamp_setup.png',
+          desc: 'A delicate screwing task mimicking a lightbulb replacement. The robot must apply continuous rotation without crushing the fragile bulb structure.',
+          params: [['Max Grip Force', '10 N'], ['Thread Pitch', '2.5 mm'], ['Material', 'Glass / Copper'], ['Weight', '45g']]
+        },
+        {
+          id: 'drawer', name: 'Drawer Module', category: 'Composed Assembly', realImg: './assets/modules/box_setup.png',
+          desc: 'A sliding drawer that tests the robot\'s ability to pull and push along a linear axis. Evaluates friction compensation and steady linear velocity.',
+          params: [['Friction Coeff.', '0.3 &mu;k'], ['Travel Distance', '100 mm'], ['Material', 'PETG'], ['Weight', '400g']]
+        },
+        {
+          id: 'shock-absorber', name: 'Shock Absorber', category: 'Composed Assembly', realImg: './assets/modules/spring_setup.png',
+          desc: 'A spring-loaded mechanism that pushes back against the robot. Tests the robot\'s force-control capabilities and compliance under variable resistance.',
+          params: [['Spring Constant', '2.5 N/mm'], ['Max Compression', '50 mm'], ['Material', 'Steel / PETG'], ['Weight', '750g']]
+        }
+      ];
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const dropdownsContainer = document.getElementById('category-dropdowns');
+        const titleEl = document.getElementById('dyn-title');
+        const descEl = document.getElementById('dyn-desc');
+        const tableBodyEl = document.getElementById('dyn-table-body');
+        const input = document.getElementById('dyn-slider-input');
+        const overlay = document.getElementById('dyn-img-real');
+        const sliderHandle = document.getElementById('dyn-slider-handle');
+
+        function renderModule(mod) {
+          titleEl.textContent = mod.name;
+          descEl.innerHTML = mod.desc;
+          tableBodyEl.innerHTML = mod.params.map(p => `<tr><td><strong>${p[0]}</strong></td><td>${p[1]}</td></tr>`).join('');
+
+          const baseImg = document.getElementById('dyn-img-3d');
+          const overlayImg = document.getElementById('dyn-img-real');
+          if (mod.realImg) {
+            baseImg.src = mod.realImg;
+            overlayImg.src = mod.realImg;
+          }
+
+
+          // Reset slider on switch
+          input.value = 50;
+          overlayImg.style.clipPath = 'inset(0 50% 0 0)';
+          sliderHandle.style.left = '50%';
+        }
+
+        // Group modules by category
+        const groups = {};
+        modulesData.forEach((mod, index) => {
+          if (!groups[mod.category]) groups[mod.category] = [];
+          groups[mod.category].push({ mod, index });
+        });
+
+        const selects = [];
+
+        // Create 3 select boxes
+        for (const [category, items] of Object.entries(groups)) {
+          const col = document.createElement('div');
+          col.className = 'column is-narrow has-text-centered';
+
+          const label = document.createElement('div');
+          label.className = 'label has-text-centered mb-2 is-size-6';
+          label.style.color = '#94a3b8';
+          label.style.textTransform = 'uppercase';
+          label.style.letterSpacing = '1px';
+          label.textContent = category;
+
+          const control = document.createElement('div');
+          control.className = 'control';
+
+          const selectDiv = document.createElement('div');
+          selectDiv.className = 'select is-rounded';
+
+          const select = document.createElement('select');
+          select.style.minWidth = '240px';
+
+          const defaultOpt = document.createElement('option');
+          defaultOpt.value = "";
+          defaultOpt.disabled = true;
+          defaultOpt.selected = true;
+          defaultOpt.textContent = "Select module...";
+          select.appendChild(defaultOpt);
+
+          items.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.index;
+            option.textContent = item.mod.name;
+            select.appendChild(option);
+          });
+
+          selectDiv.appendChild(select);
+          control.appendChild(selectDiv);
+          col.appendChild(label);
+          col.appendChild(control);
+
+          dropdownsContainer.appendChild(col);
+          selects.push(select);
+
+          select.addEventListener('change', (e) => {
+            if (e.target.value !== "") {
+              // Reset other selects
+              selects.forEach(s => {
+                if (s !== select) s.value = "";
+              });
+              renderModule(modulesData[e.target.value]);
+            }
+          });
+        }
+
+        // Init
+        selects[0].value = groups[Object.keys(groups)[0]][0].index;
+        renderModule(modulesData[selects[0].value]);
+
+        // Slider Interaction
+        input.addEventListener('input', (e) => {
+          const val = e.target.value;
+          overlay.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+          sliderHandle.style.left = `${val}%`;
+        });
+      });
+    </script>
+    <section class="section" id="Videos">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Video Demonstrations</h2>
+        <div class="columns is-multiline">
+          <!-- Video 1 -->
+          <div class="column is-half">
+            <div class="box video-placeholder"
+              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="text-align: center; color: #94a3b8;">
+                <i class="fas fa-play-circle fa-3x mb-3"></i>
+                <p class="has-text-weight-medium">Demo Video 1</p>
+              </div>
+            </div>
+          </div>
+          <!-- Video 2 -->
+          <div class="column is-half">
+            <div class="box video-placeholder"
+              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="text-align: center; color: #94a3b8;">
+                <i class="fas fa-play-circle fa-3x mb-3"></i>
+                <p class="has-text-weight-medium">Demo Video 2</p>
+              </div>
+            </div>
+          </div>
+          <!-- Video 3 -->
+          <div class="column is-half">
+            <div class="box video-placeholder"
+              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="text-align: center; color: #94a3b8;">
+                <i class="fas fa-play-circle fa-3x mb-3"></i>
+                <p class="has-text-weight-medium">Demo Video 3</p>
+              </div>
+            </div>
+          </div>
+          <!-- Video 4 -->
+          <div class="column is-half">
+            <div class="box video-placeholder"
+              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="text-align: center; color: #94a3b8;">
+                <i class="fas fa-play-circle fa-3x mb-3"></i>
+                <p class="has-text-weight-medium">Demo Video 4</p>
+              </div>
+            </div>
+          </div>
+          <!-- Video 5 -->
+          <div class="column is-half">
+            <div class="box video-placeholder"
+              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="text-align: center; color: #94a3b8;">
+                <i class="fas fa-play-circle fa-3x mb-3"></i>
+                <p class="has-text-weight-medium">Demo Video 5</p>
+              </div>
+            </div>
+          </div>
+          <!-- Video 6 -->
+          <div class="column is-half">
+            <div class="box video-placeholder"
+              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="text-align: center; color: #94a3b8;">
+                <i class="fas fa-play-circle fa-3x mb-3"></i>
+                <p class="has-text-weight-medium">Demo Video 6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pb-4" id="Results">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Results</h2>
+
+        <div class="content has-text-justified mb-6" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur.
+          </p>
+        </div>
+
+        <style>
+          @media (min-width: 769px) {
+            .stat-divider {
+              border-right: 1px solid #e2e8f0;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .stat-divider {
+              border-bottom: 1px solid #e2e8f0;
+              padding-bottom: 1.5rem;
+              margin-bottom: 1.5rem;
+            }
+          }
+        </style>
+
+
+
+        <!-- A small table -->
+        <style>
+          .results-table td,
+          .results-table th {
+            padding: 0.9rem 0.75rem !important;
+            vertical-align: middle;
+          }
+        </style>
+        <div class="table-container">
+          <table class="table results-table is-fullwidth is-striped is-hoverable"
+            style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+            <thead style="background-color: #f8fafc;">
+              <tr>
+                <th style="color: #475569; border-bottom: 2px solid #cbd5e1;">Metric</th>
+                <th style="color: #475569; border-bottom: 2px solid #cbd5e1;">Baseline (Lorem)</th>
+                <th style="color: #475569; border-bottom: 2px solid #cbd5e1;">HiveBoard (Ipsum)</th>
+                <th style="color: #475569; border-bottom: 2px solid #cbd5e1;">Improvement</th>
+              </tr>
+            </thead>
+            <tbody style="color: #334155; font-size: 0.95rem;">
+              <tr>
+                <td><strong>Task Completion Rate</strong></td>
+                <td>45%</td>
+                <td><strong>92%</strong></td>
+                <td><span style="color: #10b981; font-weight: 600;">+47%</span></td>
+              </tr>
+              <tr>
+                <td><strong>Assembly Time (s)</strong></td>
+                <td>120s</td>
+                <td><strong>45s</strong></td>
+                <td><span style="color: #10b981; font-weight: 600;">-75s</span></td>
+              </tr>
+              <tr>
+                <td><strong>Insertion Error (mm)</strong></td>
+                <td>8.5mm</td>
+                <td><strong>1.2mm</strong></td>
+                <td><span style="color: #10b981; font-weight: 600;">-7.3mm</span></td>
+              </tr>
+              <tr>
+                <td><strong>Torque Precision (%)</strong></td>
+                <td>60%</td>
+                <td><strong>98%</strong></td>
+                <td><span style="color: #10b981; font-weight: 600;">+38%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="content has-text-justified mb-0" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+            labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur.
+          </p>
+        </div>
+
+        <!-- Stats Component from Image -->
+        <div
+          style="height: 1px; width: 100%; background: linear-gradient(90deg, transparent, #cbd5e1, transparent); margin: 2.5rem 0;">
+        </div>
+        <div class="columns is-multiline">
+          <!-- Column 1 -->
+          <div class="column is-3-tablet is-12-mobile stat-divider">
+            <h3 class="title is-3 mb-1" style="font-weight: 700; color: #0f172a; letter-spacing: -0.5px;">98.5%</h3>
+            <p style="font-size: 0.85rem; color: #475569; line-height: 1.4;">Success rate across all standardized
+              robotic manipulation tasks</p>
+          </div>
+          <!-- Column 2 -->
+          <div class="column is-3-tablet is-12-mobile stat-divider">
+            <h3 class="title is-3 mb-1" style="font-weight: 700; color: #0f172a; letter-spacing: -0.5px;">&lt; 2 mm</h3>
+            <p style="font-size: 0.85rem; color: #475569; line-height: 1.4;">Average positional error during
+              high-precision <em>peg-in-hole</em> trials</p>
+          </div>
+          <!-- Column 3 -->
+          <div class="column is-3-tablet is-12-mobile stat-divider">
+            <h3 class="title is-3 mb-1" style="font-weight: 700; color: #0f172a; letter-spacing: -0.5px;">15 Nm</h3>
+            <p style="font-size: 0.85rem; color: #475569; line-height: 1.4;">Maximum continuous torque sustained without
+              slip in the valve module</p>
+          </div>
+          <!-- Column 4 -->
+          <div class="column is-3-tablet is-12-mobile">
+            <h3 class="title is-3 mb-1" style="font-weight: 700; color: #0f172a; letter-spacing: -0.5px;">24/7</h3>
+            <p style="font-size: 0.85rem; color: #475569; line-height: 1.4;">Reliable continuous operation and data
+              collection for reinforcement learning</p>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+
+
+    <section class="section pt-6" id="Citation">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Citation</h2>
+        <div class="box"
+          style="position: relative; background-color: #fafafa; border: 1px solid #cbd5e1; box-shadow: none; border-radius: 8px; padding-top: 2.5rem;">
+          <button class="button is-small is-white" id="copy-citation-btn"
+            style="position: absolute; top: 12px; right: 12px; font-weight: 500; font-size: 0.75rem; border: 1px solid #cbd5e1; color: #475569;"
+            onclick="navigator.clipboard.writeText(document.getElementById('citation-text').innerText); this.innerHTML = '<span class=\'icon is-small\'><i class=\'fas fa-check\' style=\'color: #10b981;\'></i></span><span>Copied!</span>'; setTimeout(() => this.innerHTML = '<span class=\'icon is-small\'><i class=\'far fa-copy\'></i></span><span>Copy</span>', 2000);">
+            <span class="icon is-small"><i class="far fa-copy"></i></span>
+            <span>Copy</span>
+          </button>
+          <pre
+            style="background-color: transparent; padding: 0; margin: 0; overflow-x: auto; font-family: 'Courier New', Courier, monospace; color: #334155; font-size: 0.9rem;"><code id="citation-text">@inproceedings{hiveboard2026,
+  title     = {HiveBoard: An Open, Modular, 3D-Printed Dexterity Benchmark for Industrial Robotic Manipulation},
+  author    = {&lt;authors&gt;},
+  booktitle = {&lt;journal&gt;},
+  year      = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="Acknowledgments">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Acknowledgments</h2>
+        <div class="content has-text-justified" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer"
+      style="background-color: transparent; padding: 1.5rem; border-top: 1px solid #e2e8f0; margin-top: 2rem;">
+      <div class="content has-text-centered">
+        <p style="color: #94a3b8; font-size: 0.75rem; margin: 0;">
+          This website adapts the <strong>Clarity Template</strong> by Shikun Liu and the <strong>Academic Project Astro
+            Template</strong> by Roman Hauksson.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <div id="app" class="hidden-app">
     <div id="ui-layer">
       <header>
-        <h1>HiveBoard <span>Interactive 3D</span></h1>
-        <p>Add, rotate and interact with the project pieces</p>
+        <div class="header-content">
+          <div>
+            <h1>HiveBoard <span>Interactive 3D</span></h1>
+            <p>Add, rotate and interact with the project pieces</p>
+          </div>
+          <button id="back-to-presentation-btn" class="back-btn" title="Back to Presentation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </button>
+        </div>
       </header>
 
       <div id="piece-info-panel" class="info-panel hidden">
@@ -59,7 +874,8 @@
 
         <button id="move-pin-btn" class="action-btn" title="Mudar Posição do Pino"
           style="pointer-events: auto; background: rgba(16, 185, 129, 0.2); backdrop-filter: blur(10px); border: 1px solid rgba(16, 185, 129, 0.5); cursor: pointer; display: none; color: #6ee7b7; box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
@@ -95,7 +911,7 @@
             style="flex: 1; padding: 0.5rem; text-align: center;">Small</button>
         </div>
 
-        <p style="font-size: 0.85rem; color: var(--text-color); opacity: 0.7; margin-bottom: 1rem; line-height: 1.4;">
+        <p style="font-size: 0.85rem; color: var(--text-color); opacity: 0.7; margin-bottom: 1rem; line-height: 1.7;">
           Select any task below to automatically add and snap its components into an available slot on the honeycomb
           board.
         </p>
@@ -144,7 +960,7 @@
             </svg>
             <span class="btn-text">Top View</span>
           </button>
-  
+
           <button id="view-side" class="view-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -153,7 +969,7 @@
             </svg>
             <span class="btn-text">Side View</span>
           </button>
-  
+
           <button id="center-view" class="view-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -165,7 +981,8 @@
         </div>
 
         <button id="view-toggle-btn" class="view-btn mobile-only" title="View Options">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
