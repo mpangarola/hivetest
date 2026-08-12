@@ -63,8 +63,8 @@
       scroll-behavior: smooth;
     }
   </style>
-  <script type="module" crossorigin src="./assets/index-BFPk8Roc.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-OMHMO1sH.css">
+  <script type="module" crossorigin src="./assets/index-BuoDdWC4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C7k36TLR.css">
 </head>
 
 <body>
@@ -73,9 +73,9 @@
     <a href="#Abstract">Abstract</a>
     <a href="#Interactive-Viewer">3D Viewer</a>
     <a href="#Modules-Specs">Modules & Specs</a>
+    <a href="#Simulation-Compatibility">Simulators</a>
     <a href="#Videos">Videos</a>
-    <a href="#Citation">Citation</a>
-    <a href="#Acknowledgments">Acknowledgments</a>
+    <a href="#Results">Results</a>
   </nav>
 
   <div id="presentation-site">
@@ -170,10 +170,10 @@
     </section>
 
     <!-- ABSTRACT SECTION -->
-    <section class="section pt-2 pb-4" id="Abstract">
+    <section class="section" id="Abstract">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Abstract</h2>
-        <div class="content has-text-justified" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
+        <div class="content has-text-justified mb-0" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
           <p>
             Manipulation benchmarks predominantly evaluate free-object grasping, pick-and-place, and loose-part
             assembly, yet real-world usefulness arises from constrained, force-dependent, often multi-step mechanisms.
@@ -199,7 +199,7 @@
     </section>
 
     <!-- INTERACTIVE IMAGE SECTION -->
-    <section class="pt-5 pb-6" id="Interactive-Image">
+    <section class="section" id="Interactive-Image">
       <div class="container is-max-desktop">
         <div class="interactive-image-container"
           style="position: relative; width: 100%; max-width: 250px; margin: 0 auto;">
@@ -270,11 +270,11 @@
       </div>
     </section>
 
-    <section class="section pt-4" id="Interactive-Viewer">
+    <section class="section has-background-light" id="Interactive-Viewer">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full">
-            <h2 class="title is-3 has-text-centered mb-5">Interactive 3D Benchmark</h2>
+            <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Interactive 3D Benchmark</h2>
             <div class="content has-text-justified mb-5" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
               <p>
                 Explore the HiveBoard interactively in 3D. Freely rotate the perspective, inspect interchangeable
@@ -302,7 +302,7 @@
     <!-- NEW SECTION: Modules & Specifications -->
     <section class="section" id="Modules-Specs">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered mb-3">Modules & Specifications</h2>
+        <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Modules & Specifications</h2>
         <p class="has-text-centered mb-4" style="color: #94a3b8; line-height: 1.6;">
           Explore our suite of testing components. Select a category below to compare physical hardware with its digital
           twin and review detailed technical parameters.
@@ -329,7 +329,7 @@
                   alt="Real Object">
 
                 <!-- Slider Handle -->
-                <div class="img-comp-slider slider-handle-animated" id="dyn-slider-handle"
+                <div class="img-comp-slider" id="dyn-slider-handle"
                   style="position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: white; transform: translateX(-50%); pointer-events: none; z-index: 5;">
                   <div
                     style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; background: white; border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
@@ -356,7 +356,15 @@
             </div>
             <!-- Right: Text & Table -->
             <div class="column is-half">
-              <h3 class="title is-4" id="dyn-title">Loading...</h3>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+                <h3 class="title is-4 mb-0" id="dyn-title">Loading...</h3>
+                <button id="btn-see-3d" class="button is-small"
+                  style="background-color: transparent; border: 1px solid #e2e8f0; color: #475569; font-weight: 600; border-radius: 6px; padding: 0 1rem; height: 32px; transition: all 0.2s; cursor: pointer;"
+                  onmouseover="this.style.borderColor='#edaf19'; this.style.color='#edaf19';"
+                  onmouseout="this.style.borderColor='#e2e8f0'; this.style.color='#475569';">
+                  <i class="fas fa-cube" style="margin-right: 6px;"></i> See 3D Model
+                </button>
+              </div>
               <p class="mb-4 has-text-justified" id="dyn-desc"></p>
               <style>
                 .academic-table {
@@ -421,55 +429,163 @@
       </div>
     </section>
 
+    <!-- SIMULATION COMPATIBILITY SECTION -->
+    <section class="section has-background-light" id="Simulation-Compatibility"
+      style="border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+      <div class="container is-max-desktop">
+        <div class="has-text-centered mb-5">
+          <h2 class="title is-3" style="color: #0f172a; letter-spacing: -0.5px;">Simulation Compatibility</h2>
+          <p class="subtitle is-6 mt-3" style="color: #64748b; max-width: 700px; margin: 0 auto;">
+            The HiveBoard project also includes simulation-ready CAD assets suitable for:
+          </p>
+        </div>
+
+        <div class="columns is-multiline is-centered mt-4">
+          <!-- MuJoCo -->
+          <div class="column is-3-desktop is-6-tablet">
+            <div class="box"
+              style="height: 100%; display: flex; flex-direction: column; text-align: center; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f1f5f9;">
+
+              <div
+                style="width: 48px; height: 48px; margin: 0 auto 1rem auto; border-radius: 12px; background: linear-gradient(135deg, rgba(237, 175, 25, 0.1), rgba(237, 175, 25, 0.25)); display: flex; align-items: center; justify-content: center; color: #edaf19;">
+                <i class="fas fa-cube fa-lg"></i>
+              </div>
+
+              <h4 class="title is-5" style="color: #0f172a; margin-bottom: 0.5rem;">MuJoCo</h4>
+              <p style="font-size: 0.85rem; color: #64748b; flex-grow: 1; margin-bottom: 1.25rem; line-height: 1.5;">
+                High-performance physics engine for fast and accurate simulation of contact mechanics.
+              </p>
+
+              <button class="button is-small is-fullwidth"
+                style="background-color: transparent; border: 1px solid #e2e8f0; color: #475569; font-weight: 600; border-radius: 6px; transition: all 0.2s; cursor: not-allowed;"
+                onmouseover="this.style.borderColor='#edaf19'; this.style.color='#edaf19'; this.innerHTML='(Soon)';"
+                onmouseout="this.style.borderColor='#e2e8f0'; this.style.color='#475569'; this.innerHTML='<i class=\'fas fa-play\' style=\'margin-right: 6px; font-size: 0.85em;\'></i> Test';"><i class="fas fa-play"
+                  style="margin-right: 6px; font-size: 0.85em;"></i> Test</button>
+            </div>
+          </div>
+
+          <!-- PyBullet -->
+          <div class="column is-3-desktop is-6-tablet">
+            <div class="box"
+              style="height: 100%; display: flex; flex-direction: column; text-align: center; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f1f5f9;">
+
+              <div
+                style="width: 48px; height: 48px; margin: 0 auto 1rem auto; border-radius: 12px; background: linear-gradient(135deg, rgba(237, 175, 25, 0.1), rgba(237, 175, 25, 0.25)); display: flex; align-items: center; justify-content: center; color: #edaf19;">
+                <i class="fab fa-python fa-lg"></i>
+              </div>
+
+              <h4 class="title is-5" style="color: #0f172a; margin-bottom: 0.5rem;">PyBullet</h4>
+              <p style="font-size: 0.85rem; color: #64748b; flex-grow: 1; margin-bottom: 1.25rem; line-height: 1.5;">
+                Flexible Python-based physics simulation tailored for robotics and machine learning.
+              </p>
+
+              <button class="button is-small is-fullwidth"
+                style="background-color: transparent; border: 1px solid #e2e8f0; color: #475569; font-weight: 600; border-radius: 6px; transition: all 0.2s; cursor: not-allowed;"
+                onmouseover="this.style.borderColor='#edaf19'; this.style.color='#edaf19'; this.innerHTML='(Soon)';"
+                onmouseout="this.style.borderColor='#e2e8f0'; this.style.color='#475569'; this.innerHTML='<i class=\'fas fa-play\' style=\'margin-right: 6px; font-size: 0.85em;\'></i> Test';"><i class="fas fa-play"
+                  style="margin-right: 6px; font-size: 0.85em;"></i> Test</button>
+            </div>
+          </div>
+
+          <!-- Isaac Sim -->
+          <div class="column is-3-desktop is-6-tablet">
+            <div class="box"
+              style="height: 100%; display: flex; flex-direction: column; text-align: center; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f1f5f9;">
+
+              <div
+                style="width: 48px; height: 48px; margin: 0 auto 1rem auto; border-radius: 12px; background: linear-gradient(135deg, rgba(237, 175, 25, 0.1), rgba(237, 175, 25, 0.25)); display: flex; align-items: center; justify-content: center; color: #edaf19;">
+                <i class="fas fa-microchip fa-lg"></i>
+              </div>
+
+              <h4 class="title is-5" style="color: #0f172a; margin-bottom: 0.5rem;">Isaac Sim</h4>
+              <p style="font-size: 0.85rem; color: #64748b; flex-grow: 1; margin-bottom: 1.25rem; line-height: 1.5;">
+                Photorealistic, RTX-powered robotics simulator with advanced AI integrations.
+              </p>
+
+              <button class="button is-small is-fullwidth"
+                style="background-color: transparent; border: 1px solid #e2e8f0; color: #475569; font-weight: 600; border-radius: 6px; transition: all 0.2s; cursor: not-allowed;"
+                onmouseover="this.style.borderColor='#edaf19'; this.style.color='#edaf19'; this.innerHTML='(Soon)';"
+                onmouseout="this.style.borderColor='#e2e8f0'; this.style.color='#475569'; this.innerHTML='<i class=\'fas fa-play\' style=\'margin-right: 6px; font-size: 0.85em;\'></i> Test';"><i class="fas fa-play"
+                  style="margin-right: 6px; font-size: 0.85em;"></i> Test</button>
+            </div>
+          </div>
+
+          <!-- ROS-based simulators -->
+          <div class="column is-3-desktop is-6-tablet">
+            <div class="box"
+              style="height: 100%; display: flex; flex-direction: column; text-align: center; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f1f5f9;">
+
+              <div
+                style="width: 48px; height: 48px; margin: 0 auto 1rem auto; border-radius: 12px; background: linear-gradient(135deg, rgba(237, 175, 25, 0.1), rgba(237, 175, 25, 0.25)); display: flex; align-items: center; justify-content: center; color: #edaf19;">
+                <i class="fas fa-network-wired fa-lg"></i>
+              </div>
+
+              <h4 class="title is-5" style="color: #0f172a; margin-bottom: 0.5rem;">ROS-based</h4>
+              <p style="font-size: 0.85rem; color: #64748b; flex-grow: 1; margin-bottom: 1.25rem; line-height: 1.5;">
+                Ready for Gazebo and ROS 2 standard pipelines for seamless deployment.
+              </p>
+
+              <button class="button is-small is-fullwidth"
+                style="background-color: transparent; border: 1px solid #e2e8f0; color: #475569; font-weight: 600; border-radius: 6px; transition: all 0.2s; cursor: not-allowed;"
+                onmouseover="this.style.borderColor='#edaf19'; this.style.color='#edaf19'; this.innerHTML='(Soon)';"
+                onmouseout="this.style.borderColor='#e2e8f0'; this.style.color='#475569'; this.innerHTML='<i class=\'fas fa-play\' style=\'margin-right: 6px; font-size: 0.85em;\'></i> Test';"><i class="fas fa-play"
+                  style="margin-right: 6px; font-size: 0.85em;"></i> Test</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <script>
       const modulesData = [
         {
-          id: 'high-valve', name: 'High Torque Valve', category: 'Torque-Based', realImg: './assets/modules/torque_valve_noFriction_setup.png',
+          id: 'high-valve', pieceType: 'high_torque_valve', name: 'High Torque Valve', category: 'Torque-Based', realImg: './assets/modules/torque_valve_noFriction_setup.png',
           desc: 'This high-torque valve module is designed to test robotic grasping strength and rotational dexterity under high resistance. It features an industrial-grade valve body mounted on a standardized honeycomb base.',
           params: [['Torque Required', '4.5 Nm'], ['Rotation Angle', '90 degrees'], ['Material', 'Stainless Steel / PETG'], ['Weight', '850g']]
         },
         {
-          id: 'small-valve', name: 'Small Valve', category: 'Torque-Based', realImg: './assets/modules/small_valve_setup.png',
+          id: 'small-valve', pieceType: 'small_valve', name: 'Small Valve', category: 'Torque-Based', realImg: './assets/modules/small_valve_setup.png',
           desc: 'A smaller precision valve for testing two-finger pinch grasps and continuous rotational capabilities under low torque requirements.',
           params: [['Torque Required', '1.2 Nm'], ['Rotation Angle', 'Continuous'], ['Material', 'Brass / PETG'], ['Weight', '320g']]
         },
         {
-          id: 'industrial-nuts', name: 'Industrial Nuts', category: 'Torque-Based', realImg: './assets/modules/m30_setup.png',
+          id: 'industrial-nuts', pieceType: 'm30', name: 'Industrial Nuts', category: 'Torque-Based', realImg: './assets/modules/m30_setup.png',
           desc: 'A set of different sized threaded nuts (M8, M14, M30). Evaluates the ability of the robotic gripper to adapt to different geometric sizes and perform continuous screwing.',
           params: [['Sizes', 'M8, M14, M30'], ['Thread Type', 'Metric Coarse'], ['Material', 'Steel'], ['Weight', 'Varies']]
         },
         {
-          id: 'circuit-breaker', name: 'Circuit Breaker', category: 'Precision-Based', realImg: './assets/modules/switch_setup.png',
+          id: 'circuit-breaker', pieceType: 'circuit_breaker', name: 'Circuit Breaker', category: 'Precision-Based', realImg: './assets/modules/switch_setup.png',
           desc: 'Simulates an electrical panel circuit breaker. Requires precise alignment and a flipping motion, testing the manipulator\'s fine motor control on small switches.',
           params: [['Actuation Force', '3.5 N'], ['Travel Distance', '15 mm'], ['Material', 'ABS Plastic'], ['Weight', '150g']]
         },
         {
-          id: 'button-cover', name: 'Button & Cover', category: 'Precision-Based', realImg: './assets/modules/button_setup.png',
+          id: 'button-cover', pieceType: 'button_composed', name: 'Button & Cover', category: 'Precision-Based', realImg: './assets/modules/button_setup.png',
           desc: 'A covered emergency stop button. The robot must first lift the protective cover and then press the button down, testing sequential task planning and precision.',
           params: [['Button Force', '5 N'], ['Cover Torque', '0.5 Nm'], ['Material', 'Acrylic / PETG'], ['Weight', '200g']]
         },
         {
-          id: 'ball-valve', name: 'Ball Valve', category: 'Composed Assembly', realImg: './assets/modules/big_valve_setup.png',
+          id: 'ball-valve', pieceType: 'ball_valve', name: 'Ball Valve', category: 'Composed Assembly', realImg: './assets/modules/big_valve_setup.png',
           desc: 'An industrial ball valve requiring a lever-pulling motion. Tests the robot\'s capability to exert linear and rotational forces along an offset pivot point.',
           params: [['Force Required', '15 N'], ['Lever Travel', '90 degrees'], ['Material', 'PVC / Steel'], ['Weight', '600g']]
         },
         {
-          id: 'key-lock', name: 'Key Lock', category: 'Composed Assembly', realImg: './assets/modules/key_setup.png',
+          id: 'key-lock', pieceType: 'key', name: 'Key Lock', category: 'Composed Assembly', realImg: './assets/modules/key_setup.png',
           desc: 'A precision key insertion and rotation task. Requires extremely tight tolerances for insertion followed by a rotational motion to unlock.',
           params: [['Clearance', '0.2 mm'], ['Rotation', '90 degrees'], ['Material', 'Brass / Steel'], ['Weight', '120g']]
         },
         {
-          id: 'lamp-bulb', name: 'Lamp Bulb', category: 'Composed Assembly', realImg: './assets/modules/lamp_setup.png',
+          id: 'lamp-bulb', pieceType: 'lamp', name: 'Lamp Bulb', category: 'Composed Assembly', realImg: './assets/modules/lamp_setup.png',
           desc: 'A delicate screwing task mimicking a lightbulb replacement. The robot must apply continuous rotation without crushing the fragile bulb structure.',
           params: [['Max Grip Force', '10 N'], ['Thread Pitch', '2.5 mm'], ['Material', 'Glass / Copper'], ['Weight', '45g']]
         },
         {
-          id: 'drawer', name: 'Drawer Module', category: 'Composed Assembly', realImg: './assets/modules/box_setup.png',
+          id: 'drawer', pieceType: 'drawer', name: 'Drawer Module', category: 'Composed Assembly', realImg: './assets/modules/box_setup.png',
           desc: 'A sliding drawer that tests the robot\'s ability to pull and push along a linear axis. Evaluates friction compensation and steady linear velocity.',
           params: [['Friction Coeff.', '0.3 &mu;k'], ['Travel Distance', '100 mm'], ['Material', 'PETG'], ['Weight', '400g']]
         },
         {
-          id: 'shock-absorber', name: 'Shock Absorber', category: 'Composed Assembly', realImg: './assets/modules/spring_setup.png',
+          id: 'shock-absorber', pieceType: 'shock_absorber', name: 'Shock Absorber', category: 'Composed Assembly', realImg: './assets/modules/spring_setup.png',
           desc: 'A spring-loaded mechanism that pushes back against the robot. Tests the robot\'s force-control capabilities and compliance under variable resistance.',
           params: [['Spring Constant', '2.5 N/mm'], ['Max Compression', '50 mm'], ['Material', 'Steel / PETG'], ['Weight', '750g']]
         }
@@ -484,6 +600,13 @@
         const overlay = document.getElementById('dyn-img-real');
         const sliderHandle = document.getElementById('dyn-slider-handle');
 
+        document.getElementById('btn-see-3d').addEventListener('click', (e) => {
+          document.getElementById('open-viewer-btn').click();
+          const type = e.currentTarget.getAttribute('data-type');
+          const addBtn = document.querySelector(`.add-piece[data-type="${type}"]`);
+          if (addBtn) addBtn.click();
+        });
+
         function renderModule(mod) {
           titleEl.textContent = mod.name;
           descEl.innerHTML = mod.desc;
@@ -495,6 +618,8 @@
             baseImg.src = mod.realImg;
             overlayImg.src = mod.realImg;
           }
+
+          document.getElementById('btn-see-3d').setAttribute('data-type', mod.pieceType);
 
 
           // Reset slider on switch
@@ -512,7 +637,7 @@
 
         const selects = [];
 
-        // Create 3 select boxes
+        // Create 3 select boxes (Custom Dropdowns)
         for (const [category, items] of Object.entries(groups)) {
           const col = document.createElement('div');
           col.className = 'column is-narrow has-text-centered';
@@ -524,54 +649,150 @@
           label.style.letterSpacing = '1px';
           label.textContent = category;
 
-          const control = document.createElement('div');
-          control.className = 'control';
+          // Bulma Dropdown structure
+          const dropdownDiv = document.createElement('div');
+          dropdownDiv.className = 'dropdown custom-bulma-dropdown';
 
-          const selectDiv = document.createElement('div');
-          selectDiv.className = 'select is-rounded';
+          const triggerDiv = document.createElement('div');
+          triggerDiv.className = 'dropdown-trigger';
 
-          const select = document.createElement('select');
-          select.style.minWidth = '240px';
+          const triggerBtn = document.createElement('button');
+          triggerBtn.className = 'button is-rounded';
+          triggerBtn.style.minWidth = '240px';
+          triggerBtn.style.justifyContent = 'space-between';
+          triggerBtn.setAttribute('aria-haspopup', 'true');
+          triggerBtn.setAttribute('aria-controls', 'dropdown-menu-' + category.replace(/\s+/g, ''));
 
-          const defaultOpt = document.createElement('option');
-          defaultOpt.value = "";
-          defaultOpt.disabled = true;
-          defaultOpt.selected = true;
-          defaultOpt.textContent = "Select module...";
-          select.appendChild(defaultOpt);
+          const btnText = document.createElement('span');
+          btnText.textContent = "Select module...";
+          btnText.style.fontWeight = '500';
+
+          const btnIcon = document.createElement('span');
+          btnIcon.className = 'icon is-small';
+          btnIcon.innerHTML = '<i class="fas fa-angle-down" aria-hidden="true" style="color: #edaf19;"></i>';
+
+          triggerBtn.appendChild(btnText);
+          triggerBtn.appendChild(btnIcon);
+          triggerDiv.appendChild(triggerBtn);
+
+          const menuDiv = document.createElement('div');
+          menuDiv.className = 'dropdown-menu';
+          menuDiv.id = 'dropdown-menu-' + category.replace(/\s+/g, '');
+          menuDiv.setAttribute('role', 'menu');
+          menuDiv.style.minWidth = '240px';
+
+          const contentDiv = document.createElement('div');
+          contentDiv.className = 'dropdown-content';
+          contentDiv.style.borderRadius = '12px';
+          contentDiv.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+          contentDiv.style.border = '1px solid #e2e8f0';
+
+          menuDiv.appendChild(contentDiv);
+          dropdownDiv.appendChild(triggerDiv);
+          dropdownDiv.appendChild(menuDiv);
+
+          col.appendChild(label);
+          col.appendChild(dropdownDiv);
+          dropdownsContainer.appendChild(col);
+
+          // Toggle dropdown
+          triggerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.querySelectorAll('.custom-bulma-dropdown').forEach(d => {
+              if (d !== dropdownDiv) d.classList.remove('is-active');
+            });
+            dropdownDiv.classList.toggle('is-active');
+          });
 
           items.forEach(item => {
-            const option = document.createElement('option');
-            option.value = item.index;
-            option.textContent = item.mod.name;
-            select.appendChild(option);
-          });
+            const a = document.createElement('a');
+            a.className = 'dropdown-item';
+            a.style.textAlign = 'left';
+            a.textContent = item.mod.name;
 
-          selectDiv.appendChild(select);
-          control.appendChild(selectDiv);
-          col.appendChild(label);
-          col.appendChild(control);
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
 
-          dropdownsContainer.appendChild(col);
-          selects.push(select);
-
-          select.addEventListener('change', (e) => {
-            if (e.target.value !== "") {
-              // Reset other selects
-              selects.forEach(s => {
-                if (s !== select) s.value = "";
+              // Reset all other selects visual text
+              document.querySelectorAll('.custom-bulma-dropdown .dropdown-trigger button span:first-child').forEach(span => {
+                span.textContent = "Select module...";
               });
-              renderModule(modulesData[e.target.value]);
-            }
+
+              btnText.textContent = item.mod.name;
+              dropdownDiv.classList.remove('is-active');
+              renderModule(item.mod);
+            });
+
+            contentDiv.appendChild(a);
           });
+
+          selects.push({ dropdownDiv, btnText, items });
         }
 
-        // Init
-        selects[0].value = groups[Object.keys(groups)[0]][0].index;
-        renderModule(modulesData[selects[0].value]);
+        // Close dropdowns on outside click
+        document.addEventListener('click', () => {
+          document.querySelectorAll('.custom-bulma-dropdown').forEach(d => d.classList.remove('is-active'));
+        });
 
-        // Slider Interaction
+        // Init
+        selects[0].btnText.textContent = selects[0].items[0].mod.name;
+        renderModule(selects[0].items[0].mod);
+
+        // Slider Interaction & Animation
+        let autoAnim = false;
+        let animTime = 0;
+        let hasAnimated = false; // Only animate once
+        
+        function wiggleSlider() {
+          if (!autoAnim) return;
+          animTime += 0.04; // Speed of the wiggle
+          
+          // Stop after one full sine wave cycle (approx 2*PI)
+          if (animTime > Math.PI * 2) {
+            autoAnim = false;
+            // Snap back precisely to 50%
+            input.value = 50;
+            overlay.style.clipPath = `inset(0 50% 0 0)`;
+            sliderHandle.style.left = `50%`;
+            return;
+          }
+
+          // Smooth sine wave oscillation (e.g., ±5%)
+          const val = 50 + Math.sin(animTime) * 5;
+          input.value = val;
+          overlay.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+          sliderHandle.style.left = `${val}%`;
+          requestAnimationFrame(wiggleSlider);
+        }
+        
+        // Trigger animation when the section comes into view
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (!hasAnimated) {
+                hasAnimated = true;
+                autoAnim = true;
+                animTime = 0; // Reset animation time for fresh start
+                requestAnimationFrame(wiggleSlider);
+              }
+            } else {
+              // When it goes out of view, reset so it animates again next time
+              hasAnimated = false;
+              autoAnim = false;
+            }
+          });
+        }, { threshold: 0.5 }); // Trigger when 50% visible
+        
+        observer.observe(document.getElementById('module-dynamic-content'));
+
+        // Stop animation early if user interacts
+        ['mousedown', 'touchstart'].forEach(evt => 
+          input.addEventListener(evt, () => autoAnim = false)
+        );
+
         input.addEventListener('input', (e) => {
+          autoAnim = false;
           const val = e.target.value;
           overlay.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
           sliderHandle.style.left = `${val}%`;
@@ -581,64 +802,181 @@
     <section class="section" id="Videos">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Video Demonstrations</h2>
-        <div class="columns is-multiline">
-          <!-- Video 1 -->
-          <div class="column is-half">
-            <div class="box video-placeholder"
-              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
-              <div style="text-align: center; color: #94a3b8;">
-                <i class="fas fa-play-circle fa-3x mb-3"></i>
-                <p class="has-text-weight-medium">Demo Video 1</p>
+        <div class="carousel-wrapper">
+          <div class="carousel-header">
+            <h3 class="carousel-title">Lerobot So-101</h3>
+            <div class="carousel-nav">
+              <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="video-carousel">
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Lerobot Demo 1</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Lerobot Demo 2</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Lerobot Demo 3</p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- Video 2 -->
-          <div class="column is-half">
-            <div class="box video-placeholder"
-              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
-              <div style="text-align: center; color: #94a3b8;">
-                <i class="fas fa-play-circle fa-3x mb-3"></i>
-                <p class="has-text-weight-medium">Demo Video 2</p>
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-header">
+            <h3 class="carousel-title">ANYmal with DynaArm</h3>
+            <div class="carousel-nav">
+              <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="video-carousel">
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">ANYmal Demo 1</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">ANYmal Demo 2</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">ANYmal Demo 3</p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- Video 3 -->
-          <div class="column is-half">
-            <div class="box video-placeholder"
-              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
-              <div style="text-align: center; color: #94a3b8;">
-                <i class="fas fa-play-circle fa-3x mb-3"></i>
-                <p class="has-text-weight-medium">Demo Video 3</p>
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-header">
+            <h3 class="carousel-title">Macao Prosthetic Hand</h3>
+            <div class="carousel-nav">
+              <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="video-carousel">
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Macao Demo 1</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Macao Demo 2</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Macao Demo 3</p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- Video 4 -->
-          <div class="column is-half">
-            <div class="box video-placeholder"
-              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
-              <div style="text-align: center; color: #94a3b8;">
-                <i class="fas fa-play-circle fa-3x mb-3"></i>
-                <p class="has-text-weight-medium">Demo Video 4</p>
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-header">
+            <h3 class="carousel-title">UR10 with Robotiq Gripper</h3>
+            <div class="carousel-nav">
+              <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="video-carousel">
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">UR10 Demo 1</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">UR10 Demo 2</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">UR10 Demo 3</p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- Video 5 -->
-          <div class="column is-half">
-            <div class="box video-placeholder"
-              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
-              <div style="text-align: center; color: #94a3b8;">
-                <i class="fas fa-play-circle fa-3x mb-3"></i>
-                <p class="has-text-weight-medium">Demo Video 5</p>
-              </div>
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-header">
+            <h3 class="carousel-title">Spot with Spot Arm</h3>
+            <div class="carousel-nav">
+              <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
             </div>
           </div>
-          <!-- Video 6 -->
-          <div class="column is-half">
-            <div class="box video-placeholder"
-              style="padding: 0; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); aspect-ratio: 16/9; background: #f8fafc; display: flex; align-items: center; justify-content: center; position: relative;">
-              <div style="text-align: center; color: #94a3b8;">
-                <i class="fas fa-play-circle fa-3x mb-3"></i>
-                <p class="has-text-weight-medium">Demo Video 6</p>
+          <div class="video-carousel">
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Spot Demo 1</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Spot Demo 2</p>
+                </div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="box video-placeholder">
+                <div style="text-align: center; color: #94a3b8;">
+                  <i class="fas fa-play-circle fa-3x mb-3"></i>
+                  <p class="has-text-weight-medium">Spot Demo 3</p>
+                </div>
               </div>
             </div>
           </div>
@@ -646,7 +984,29 @@
       </div>
     </section>
 
-    <section class="section pb-4" id="Results">
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const wrappers = document.querySelectorAll('.carousel-wrapper');
+        wrappers.forEach(wrapper => {
+          const carousel = wrapper.querySelector('.video-carousel');
+          const prevBtn = wrapper.querySelector('.prev-btn');
+          const nextBtn = wrapper.querySelector('.next-btn');
+
+          if (prevBtn && nextBtn && carousel) {
+            prevBtn.addEventListener('click', () => {
+              // Scroll left by approx one item width
+              carousel.scrollBy({ left: -320, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+              // Scroll right by approx one item width
+              carousel.scrollBy({ left: 320, behavior: 'smooth' });
+            });
+          }
+        });
+      });
+    </script>
+
+    <section class="section has-background-light" id="Results">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Results</h2>
 
@@ -687,13 +1047,13 @@
         </style>
         <div class="table-container">
           <table class="table results-table is-fullwidth is-striped is-hoverable"
-            style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-            <thead style="background-color: #f8fafc;">
+            style="background-color: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <thead style="background-color: #e2e8f0;">
               <tr>
-                <th style="color: #475569; border-bottom: 2px solid #cbd5e1;">Metric</th>
-                <th style="color: #475569; border-bottom: 2px solid #cbd5e1;">Baseline (Lorem)</th>
-                <th style="color: #475569; border-bottom: 2px solid #cbd5e1;">HiveBoard (Ipsum)</th>
-                <th style="color: #475569; border-bottom: 2px solid #cbd5e1;">Improvement</th>
+                <th style="color: #334155; border-bottom: none;">Metric</th>
+                <th style="color: #334155; border-bottom: none;">Baseline (Lorem)</th>
+                <th style="color: #334155; border-bottom: none;">HiveBoard (Ipsum)</th>
+                <th style="color: #334155; border-bottom: none;">Improvement</th>
               </tr>
             </thead>
             <tbody style="color: #334155; font-size: 0.95rem;">
@@ -701,25 +1061,25 @@
                 <td><strong>Task Completion Rate</strong></td>
                 <td>45%</td>
                 <td><strong>92%</strong></td>
-                <td><span style="color: #10b981; font-weight: 600;">+47%</span></td>
+                <td><span style="color: #d97706; font-weight: 600;">+47%</span></td>
               </tr>
               <tr>
                 <td><strong>Assembly Time (s)</strong></td>
                 <td>120s</td>
                 <td><strong>45s</strong></td>
-                <td><span style="color: #10b981; font-weight: 600;">-75s</span></td>
+                <td><span style="color: #d97706; font-weight: 600;">-75s</span></td>
               </tr>
               <tr>
                 <td><strong>Insertion Error (mm)</strong></td>
                 <td>8.5mm</td>
                 <td><strong>1.2mm</strong></td>
-                <td><span style="color: #10b981; font-weight: 600;">-7.3mm</span></td>
+                <td><span style="color: #d97706; font-weight: 600;">-7.3mm</span></td>
               </tr>
               <tr>
                 <td><strong>Torque Precision (%)</strong></td>
                 <td>60%</td>
                 <td><strong>98%</strong></td>
-                <td><span style="color: #10b981; font-weight: 600;">+38%</span></td>
+                <td><span style="color: #d97706; font-weight: 600;">+38%</span></td>
               </tr>
             </tbody>
           </table>
@@ -774,10 +1134,10 @@
 
 
 
-    <section class="section pt-6" id="Citation">
+    <section class="section" id="Citation">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Citation</h2>
-        <div class="box"
+        <div class="box mb-0"
           style="position: relative; background-color: #fafafa; border: 1px solid #cbd5e1; box-shadow: none; border-radius: 8px; padding-top: 2.5rem;">
           <button class="button is-small is-white" id="copy-citation-btn"
             style="position: absolute; top: 12px; right: 12px; font-weight: 500; font-size: 0.75rem; border: 1px solid #cbd5e1; color: #475569;"
@@ -799,7 +1159,7 @@
     <section class="section" id="Acknowledgments">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Acknowledgments</h2>
-        <div class="content has-text-justified" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
+        <div class="content has-text-justified mb-0" style="line-height: 1.7; font-size: 1rem; color: #4a4a4a;">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
