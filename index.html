@@ -62,6 +62,17 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .author-block sup {
+      font-size: 0.65em;
+      margin-left: 2px;
+      margin-right: 3px;
+    }
+
+    .no-bounce:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
   </style>
   <script type="module" crossorigin src="./assets/index-D1J0Ed0V.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-PT19sjcL.css">
@@ -85,22 +96,45 @@
         <div class="container is-widescreen has-text-centered">
           <h1 class="title mt-5 mb-3"
             style="font-size: 2.25rem; font-weight: 700; color: #1e293b; letter-spacing: -1px; line-height: 1.15;">
-            <span style="display: block; margin-bottom: 0.1em;"><span style="color: #edaf19ff;">Hive</span>Board: An
-              Open, Modular, 3D-Printed Benchmark of</span>
+            <span style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.1em; flex-wrap: wrap; gap: 0.35rem 0;">
+              <span style="display: inline-flex; align-items: center; white-space: nowrap;">
+                <img src="./assets/HIVEBOARD_logo.svg" alt="HiveBoard Logo"
+                  style="height: 1.2em; margin-right: 8px; margin-top: -2px;">
+                <span><span style="color: #edaf19ff;">Hive</span>Board:</span>
+              </span>
+              <span style="margin-left: 8px;">An Open, Modular, 3D-Printed Benchmark of</span>
+            </span>
             <span style="display: block;">Industrial Mechanisms for Robotic and Prosthetic Manipulation</span>
           </h1>
 
-          <div class="mb-1" style="font-size: 1.15rem; font-weight: 500; color: #475569;">
-            <span class="author-block">...,</span>
-            <span class="author-block">...,</span>
-            <span class="author-block">...,</span>
-            <span class="author-block">Ricardo V. Godoy,</span>
-            <span class="author-block">Marcelo Becker</span>
+          <div class="mb-3"
+            style="font-size: 1.15rem; font-weight: 500; color: #475569; max-width: 1100px; margin: 0 auto;">
+            <span class="author-block">Ricardo V. Godoy<sup>1</sup>,</span>
+            <span class="author-block">Enzo F. de Souza<sup>1</sup>,</span>
+            <span class="author-block">Rudy De-Xin de Lange<sup>2</sup>,</span>
+            <span class="author-block">Juliano Negri<sup>1</sup>,</span>
+            <span class="author-block">João A. Marsicano<sup>1</sup>,</span>
+            <span class="author-block">Victor van Halst<sup>1</sup>,</span>
+            <span class="author-block">Aravind Elanjimattathil Vijayan<sup>3</sup>,</span>
+            <span class="author-block">Gianluca Capezzuto<sup>1</sup>,</span>
+            <span class="author-block">Matheus P. Angarola<sup>1</sup>,</span>
+            <span class="author-block">Felipe A. G. Tommaselli<sup>1</sup>,</span>
+            <span class="author-block">Rafael R. Baptista<sup>4</sup>,</span>
+            <span class="author-block">Meiko Adriana van Berge<sup>5</sup>,</span>
+            <span class="author-block">Gustavo J. G. Lahr<sup>4</sup>,</span>
+            <span class="author-block">Lucas Ferrari Gerez<sup>2</sup>,</span>
+            <span class="author-block">Marcelo Becker<sup>1</sup></span>
           </div>
 
-          <div class="mb-1" style="font-size: 1rem; color: #64748b;">
-            <span class="author-block">Robotics Laboratory (LabRoM), São Carlos School of Engineering,
-              University of São Paulo, Brazil</span>
+          <div class="mb-3"
+            style="font-size: 1rem; color: #64748b; line-height: 1.4; max-width: 1200px; margin: 0 auto;">
+            <span class="author-block"><sup>1</sup>Mobile Robotics Group, University of São Paulo, Brazil</span><br>
+            <span class="author-block"><sup>2</sup>ARARA Lab, James Watt School of Engineering, University of Glasgow,
+              Scotland, UK</span><br>
+            <span class="author-block"><sup>3</sup>The Robotics Systems Lab ETH Zurich, Zurich, Switzerland</span><br>
+            <span class="author-block"><sup>4</sup>Instituto Israelita de Ensino e Pesquisa Albert Einstein, Hospital
+              Israelita Albert Einstein, São Paulo, Brazil</span><br>
+            <span class="author-block"><sup>5</sup>Independent researcher</span>
           </div>
 
           <div class="mb-4" style="font-size: 0.9rem; color: #94a3b8;">
@@ -117,20 +151,26 @@
 
             <div class="buttons is-centered" style="gap: 12px; margin: 0;">
               <!-- PDF Link -->
-              <a href="#" class="button is-rounded is-outlined hero-link-btn"
-                style="border-color: #cbd5e1; color: #334155; font-weight: 500; padding: 0 1.2rem; transition: all 0.2s;">
+              <a class="button is-rounded is-outlined hero-link-btn no-bounce"
+                style="border-color: #cbd5e1; color: #334155; font-weight: 500; padding: 0 1.2rem; transition: all 0.2s; cursor: not-allowed;"
+                onmouseover="this.querySelector('.btn-text-content').innerText = 'Soon';"
+                onmouseout="this.querySelector('.btn-text-content').innerText = 'PDF';">
                 <span class="icon" style="color: #475569;">
                   <i class="fas fa-file-pdf"></i>
                 </span>
-                <span>PDF</span>
+                <span class="btn-text-content"
+                  style="min-width: 50px; display: inline-block; text-align: center;">PDF</span>
               </a>
               <!-- arXiv Link -->
-              <a href="#" class="button is-rounded is-outlined hero-link-btn"
-                style="border-color: #cbd5e1; color: #334155; font-weight: 500; padding: 0 1.2rem; transition: all 0.2s;">
+              <a class="button is-rounded is-outlined hero-link-btn no-bounce"
+                style="border-color: #cbd5e1; color: #334155; font-weight: 500; padding: 0 1.2rem; transition: all 0.2s; cursor: not-allowed;"
+                onmouseover="this.querySelector('.btn-text-content').innerText = 'Soon';"
+                onmouseout="this.querySelector('.btn-text-content').innerText = 'arXiv';">
                 <span class="icon" style="color: #475569;">
                   <i class="ai ai-arxiv" style="font-size: 1.1em;"></i>
                 </span>
-                <span>arXiv</span>
+                <span class="btn-text-content"
+                  style="min-width: 50px; display: inline-block; text-align: center;">arXiv</span>
               </a>
               <!-- Files Link -->
               <a href="#" class="button is-rounded is-outlined hero-link-btn"
@@ -332,7 +372,7 @@
     <section class="section" id="Modules-Specs">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered mb-5" style="letter-spacing: -0.5px;">Modules & Specifications</h2>
-        <p class="has-text-centered mb-4" style="color: #94a3b8; line-height: 1.6;">
+        <p class="has-text-justified mb-4" style="color: #94a3b8; line-height: 1.6;">
           The library contains 13 functional attachments in three skill categories. Select a category below to compare
           each printed part with its digital twin and review the success criterion, timeout, and stage decomposition
           used by the evaluation protocol.
@@ -718,90 +758,106 @@
           groups[mod.category].push({ mod, index });
         });
 
-        const selects = [];
+        // Create 1 select box (Custom Dropdown)
+        const col = document.createElement('div');
+        col.className = 'column is-narrow has-text-centered';
 
-        // Create 3 select boxes (Custom Dropdowns)
-        for (const [category, items] of Object.entries(groups)) {
-          const col = document.createElement('div');
-          col.className = 'column is-narrow has-text-centered';
+        // Title on top
+        const label = document.createElement('div');
+        label.className = 'label has-text-centered mb-2 is-size-6';
+        label.style.color = '#94a3b8';
+        label.style.textTransform = 'uppercase';
+        label.style.letterSpacing = '1px';
+        label.textContent = 'Select Benchmark Module';
 
-          const label = document.createElement('div');
-          label.className = 'label has-text-centered mb-2 is-size-6';
-          label.style.color = '#94a3b8';
-          label.style.textTransform = 'uppercase';
-          label.style.letterSpacing = '1px';
-          label.textContent = category;
+        // Bulma Dropdown structure
+        const dropdownDiv = document.createElement('div');
+        dropdownDiv.className = 'dropdown custom-bulma-dropdown';
+        dropdownDiv.style.width = '100%';
+        dropdownDiv.style.maxWidth = '560px';
+        dropdownDiv.style.margin = '0 auto';
 
-          // Bulma Dropdown structure
-          const dropdownDiv = document.createElement('div');
-          dropdownDiv.className = 'dropdown custom-bulma-dropdown';
+        const triggerDiv = document.createElement('div');
+        triggerDiv.className = 'dropdown-trigger';
+        triggerDiv.style.width = '100%';
 
-          const triggerDiv = document.createElement('div');
-          triggerDiv.className = 'dropdown-trigger';
+        const triggerBtn = document.createElement('button');
+        triggerBtn.className = 'button is-rounded';
+        triggerBtn.style.width = '100%';
+        triggerBtn.style.justifyContent = 'space-between';
+        triggerBtn.setAttribute('aria-haspopup', 'true');
+        triggerBtn.setAttribute('aria-controls', 'dropdown-menu-modules');
 
-          const triggerBtn = document.createElement('button');
-          triggerBtn.className = 'button is-rounded';
-          triggerBtn.style.minWidth = '240px';
-          triggerBtn.style.justifyContent = 'space-between';
-          triggerBtn.setAttribute('aria-haspopup', 'true');
-          triggerBtn.setAttribute('aria-controls', 'dropdown-menu-' + category.replace(/\s+/g, ''));
+        const btnText = document.createElement('span');
+        btnText.textContent = "Select module...";
+        btnText.style.fontWeight = '500';
 
-          const btnText = document.createElement('span');
-          btnText.textContent = "Select module...";
-          btnText.style.fontWeight = '500';
+        const btnIcon = document.createElement('span');
+        btnIcon.className = 'icon is-small';
+        btnIcon.innerHTML = '<i class="fas fa-angle-down" aria-hidden="true" style="color: #edaf19;"></i>';
 
-          const btnIcon = document.createElement('span');
-          btnIcon.className = 'icon is-small';
-          btnIcon.innerHTML = '<i class="fas fa-angle-down" aria-hidden="true" style="color: #edaf19;"></i>';
+        triggerBtn.appendChild(btnText);
+        triggerBtn.appendChild(btnIcon);
+        triggerDiv.appendChild(triggerBtn);
 
-          triggerBtn.appendChild(btnText);
-          triggerBtn.appendChild(btnIcon);
-          triggerDiv.appendChild(triggerBtn);
+        const menuDiv = document.createElement('div');
+        menuDiv.className = 'dropdown-menu';
+        menuDiv.id = 'dropdown-menu-modules';
+        menuDiv.setAttribute('role', 'menu');
+        menuDiv.style.width = '100%';
+        menuDiv.style.minWidth = '100%';
 
-          const menuDiv = document.createElement('div');
-          menuDiv.className = 'dropdown-menu';
-          menuDiv.id = 'dropdown-menu-' + category.replace(/\s+/g, '');
-          menuDiv.setAttribute('role', 'menu');
-          menuDiv.style.minWidth = '240px';
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'dropdown-content';
+        contentDiv.style.borderRadius = '12px';
+        contentDiv.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+        contentDiv.style.border = '1px solid #e2e8f0';
+        contentDiv.style.maxHeight = '400px';
+        contentDiv.style.overflowY = 'auto';
 
-          const contentDiv = document.createElement('div');
-          contentDiv.className = 'dropdown-content';
-          contentDiv.style.borderRadius = '12px';
-          contentDiv.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
-          contentDiv.style.border = '1px solid #e2e8f0';
+        menuDiv.appendChild(contentDiv);
+        dropdownDiv.appendChild(triggerDiv);
+        dropdownDiv.appendChild(menuDiv);
 
-          menuDiv.appendChild(contentDiv);
-          dropdownDiv.appendChild(triggerDiv);
-          dropdownDiv.appendChild(menuDiv);
+        col.appendChild(label);
+        col.appendChild(dropdownDiv);
+        dropdownsContainer.appendChild(col);
 
-          col.appendChild(label);
-          col.appendChild(dropdownDiv);
-          dropdownsContainer.appendChild(col);
+        // Toggle dropdown
+        triggerBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          dropdownDiv.classList.toggle('is-active');
+        });
 
-          // Toggle dropdown
-          triggerBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            document.querySelectorAll('.custom-bulma-dropdown').forEach(d => {
-              if (d !== dropdownDiv) d.classList.remove('is-active');
-            });
-            dropdownDiv.classList.toggle('is-active');
-          });
+        let firstMod = null;
+        const entries = Object.entries(groups);
+
+        entries.forEach(([category, items], index) => {
+          // Category Header
+          const header = document.createElement('div');
+          header.className = 'dropdown-item';
+          header.style.textAlign = 'left';
+          header.style.fontWeight = 'bold';
+          header.style.color = '#94a3b8';
+          header.style.textTransform = 'uppercase';
+          header.style.fontSize = '0.75rem';
+          header.style.letterSpacing = '1px';
+          header.style.pointerEvents = 'none';
+          header.textContent = category;
+          contentDiv.appendChild(header);
 
           items.forEach(item => {
+            if (!firstMod) firstMod = item.mod;
+
             const a = document.createElement('a');
             a.className = 'dropdown-item';
             a.style.textAlign = 'left';
+            a.style.paddingLeft = '1.5rem';
             a.textContent = item.mod.name;
 
             a.addEventListener('click', (e) => {
               e.preventDefault();
               e.stopPropagation();
-
-              // Reset all other selects visual text
-              document.querySelectorAll('.custom-bulma-dropdown .dropdown-trigger button span:first-child').forEach(span => {
-                span.textContent = "Select module...";
-              });
-
               btnText.textContent = item.mod.name;
               dropdownDiv.classList.remove('is-active');
               renderModule(item.mod);
@@ -810,17 +866,23 @@
             contentDiv.appendChild(a);
           });
 
-          selects.push({ dropdownDiv, btnText, items });
-        }
+          if (index < entries.length - 1) {
+            const divider = document.createElement('hr');
+            divider.className = 'dropdown-divider';
+            contentDiv.appendChild(divider);
+          }
+        });
 
         // Close dropdowns on outside click
         document.addEventListener('click', () => {
-          document.querySelectorAll('.custom-bulma-dropdown').forEach(d => d.classList.remove('is-active'));
+          dropdownDiv.classList.remove('is-active');
         });
 
         // Init
-        selects[0].btnText.textContent = selects[0].items[0].mod.name;
-        renderModule(selects[0].items[0].mod);
+        if (firstMod) {
+          btnText.textContent = firstMod.name;
+          renderModule(firstMod);
+        }
 
         // Slider Interaction & Animation
         let autoAnim = false;
@@ -907,8 +969,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/spot_big_valve.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -925,8 +987,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/spot_button.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -944,8 +1006,8 @@
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video
                   src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/spot_circuit_breaker.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -962,8 +1024,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/spot_key.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -980,8 +1042,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/spot_light_bulb.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -998,8 +1060,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/spot_small_valve.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1016,8 +1078,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/spot_valve.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1083,8 +1145,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/s010_light_bulb.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1210,8 +1272,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_big_gate.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1228,8 +1290,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_big_gate_vr.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1246,8 +1308,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_button.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1265,8 +1327,8 @@
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video
                   src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_circuit_breaker.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1283,8 +1345,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_key.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1301,8 +1363,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_key_vr.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1319,8 +1381,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_light_bulb.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1338,8 +1400,8 @@
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video
                   src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_light_bulb_vr.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1356,8 +1418,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_small_gate.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1374,8 +1436,8 @@
               <div class="box video-placeholder"
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_valve_lever.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1393,8 +1455,8 @@
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video
                   src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_valve_lever_hard_vr.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
@@ -1412,8 +1474,8 @@
                 style="padding: 0; overflow: hidden; display: block; position: relative; background: #000;">
                 <video
                   src="https://github.com/mpangarola/hivetest/releases/download/v1.0-videos/anymal_valve_lever_vr.mp4"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" preload="metadata" playsinline
-                  muted
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                  preload="metadata" playsinline muted
                   onplay="this.nextElementSibling.style.opacity = '0'; this.nextElementSibling.style.pointerEvents = 'none'; this.setAttribute('controls', 'controls');"
                   onpause="this.nextElementSibling.style.opacity = '1'; this.nextElementSibling.style.pointerEvents = 'auto'; this.removeAttribute('controls');"></video>
                 <div class="video-overlay"
